@@ -10,6 +10,6 @@ public class Chien extends Animal {
 
     @Override
     public String soinQuotidien() {
-        return "Le chien " + getNom() + " doit être brossé.";
+        return "Le chien " + getNom() + " se fait brosser.";
     }
 }
