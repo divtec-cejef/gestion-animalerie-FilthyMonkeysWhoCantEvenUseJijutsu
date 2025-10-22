@@ -10,19 +10,27 @@ public class ConsoleIO {
             try {
                 valeur = Integer.parseInt(scanner.nextLine());
                 if (valeur < min || valeur > max) {
-                    System.out.println("Veuillez entrer un nombre entre " + min + " et " + max);
+                    System.out.println("⚠ Veuillez entrer un nombre entre " + min + " et " + max + ".");
                 } else {
                     return valeur;
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Entrée invalide, veuillez entrer un nombre.");
+                System.out.println("⚠ Entrée invalide, veuillez entrer un nombre entier.");
             }
         }
     }
 
     public static String lireString(String message) {
-        System.out.print(message);
-        return scanner.nextLine();
+        String texte;
+        while (true) {
+            System.out.print(message);
+            texte = scanner.nextLine().trim();
+            if (!texte.isEmpty()) {
+                return texte;
+            } else {
+                System.out.println("⚠ La saisie ne peut pas être vide.");
+            }
+        }
     }
 
     public static double lireDouble(String message, double min, double max) {
@@ -32,12 +40,12 @@ public class ConsoleIO {
             try {
                 valeur = Double.parseDouble(scanner.nextLine());
                 if (valeur < min || valeur > max) {
-                    System.out.println("Veuillez entrer un nombre entre " + min + " et " + max);
+                    System.out.println("⚠ Veuillez entrer un nombre entre " + min + " et " + max + ".");
                 } else {
                     return valeur;
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Entrée invalide, veuillez entrer un nombre.");
+                System.out.println("⚠ Entrée invalide, veuillez entrer un nombre.");
             }
         }
     }
